@@ -3,7 +3,7 @@ name: rainL
 use_tb_logger: true
 model: Rectified_Flow
 distortion: derain
-gpu_ids: [0]
+gpu_ids: [0,1]
 timesteps_ode: [1]
 
 
@@ -23,8 +23,8 @@ datasets:
   train:
     name: Train_Dataset
     mode: LQGT
-    dataroot_GT: /Datasets/RainL/trainL/GT
-    dataroot_LQ: /Datasets/RainL/trainL/LQ
+    dataroot_GT: /home/quyu/datasets/Rain13K/train/target   #/Datasets/RainL/trainL/GT
+    dataroot_LQ: /home/quyu/datasets/Rain13K/train/input    #/Datasets/RainL/trainL/LQ
 
     use_shuffle: true
     n_workers: 1  # per GPU
@@ -38,8 +38,8 @@ datasets:
   val:
     name: Val_Dataset
     mode: LQGT
-    dataroot_GT: /Datasets/RainL/testL/GT
-    dataroot_LQ: /Datasets/RainL/testL/LQ
+    dataroot_GT: /home/quyu/datasets/Rain13K/test/Rain100H/target    #/Datasets/RainL/testL/GT
+    dataroot_LQ: /home/quyu/datasets/Rain13K/test/Rain100H/input    #/Datasets/RainL/testL/LQ
 
     batch_size: 1
     # GT_size: 256
@@ -64,7 +64,7 @@ path:
   pretrain_model_G: ~
   strict_load: true
   resume_state: ~
-  experiments_root: /results
+  experiments_root: ./results
 
 
 #### training settings: learning rate scheme, loss
