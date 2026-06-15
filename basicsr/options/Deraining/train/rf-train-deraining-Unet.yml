@@ -3,7 +3,7 @@ name: rainL
 use_tb_logger: true
 model: Rectified_Flow
 distortion: derain
-gpu_ids: [0,1]
+gpu_ids: [0]
 timesteps_ode: [1]
 
 

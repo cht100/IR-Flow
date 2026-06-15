@@ -3,7 +3,7 @@ name: haze
 use_tb_logger: true
 model: Rectified_Flow
 distortion: haze
-gpu_ids: [0]
+gpu_ids: [1]
 timesteps_ode: [1] # 确保 timesteps 是一个列表
 
 sde:
@@ -20,8 +20,8 @@ datasets:
   train:
     name: Train_Dataset
     mode: LQGT
-    dataroot_GT: /gdata2/fanzh/RESIDE-6K/train/GT
-    dataroot_LQ: /gdata2/fanzh/RESIDE-6K/train/hazy
+    dataroot_GT: /home/quyu/datasets/RESIDE-6K/train/GT      #/gdata2/fanzh/RESIDE-6K/train/GT
+    dataroot_LQ: /home/quyu/datasets/RESIDE-6K/train/hazy    #/gdata2/fanzh/RESIDE-6K/train/hazy
 
     use_shuffle: true
     n_workers: 1 # per GPU
@@ -34,8 +34,8 @@ datasets:
   val:
     name: Val_Dataset
     mode: LQGT
-    dataroot_GT: /gdata2/fanzh/RESIDE-6K/test/GT
-    dataroot_LQ: /gdata2/fanzh/RESIDE-6K/test/hazy
+    dataroot_GT: /home/quyu/datasets/RESIDE-6K/test/GT      #/gdata2/fanzh/RESIDE-6K/test/GT
+    dataroot_LQ: /home/quyu/datasets/RESIDE-6K/test/hazy    #/gdata2/fanzh/RESIDE-6K/test/hazy
 
     batch_size: 1
     # GT_size: 256
